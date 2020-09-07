@@ -18,7 +18,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'tpope/vim-repeat'
     " Text Navigation
     Plug 'unblevable/quick-scope'
-    " Useful for React Commenting 
+    " Useful for React Commenting
     Plug 'suy/vim-context-commentstring'
     " highlight all matches under cursor
     Plug 'RRethy/vim-illuminate'
@@ -118,6 +118,26 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'yuezk/vim-js'
     Plug 'maxmellon/vim-jsx-pretty'
     Plug 'jelera/vim-javascript-syntax'
+
+    " ckolos additions
+    Plug 'elzr/vim-json'
+    Plug 'hashivim/vim-terraform'
+    Plug 'editorconfig/editorconfig-vim'
+    Plug 'godlygeek/tabular'
+    Plug 'nathanaelkane/vim-indent-guides'
+    Plug 'ckolos/blue-mood-vim'
+    Plug 'joshdick/onedark.vim'
+    Plug 'john2x/flatui.vim'
+    Plug 'preservim/nerdtree' |
+            \ Plug 'Xuyuanp/nerdtree-git-plugin'
+    Plug 'machakann/vim-highlightedyank'
+    Plug 'vim-airline/vim-airline-themes'
+    Plug 'vim-python/python-syntax'
+    Plug 'sbdchd/neoformat'
+    Plug 'machakann/vim-highlightedyank'
+    Plug 'ryanoasis/vim-devicons'
+
+
     " Plugin Graveyard
 
     " jsx syntax support

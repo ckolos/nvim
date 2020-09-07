@@ -64,3 +64,88 @@ endif
 " Better nav for omnicomplete TODO figure out why this is being overridden
 inoremap <expr> <c-j> ("\<C-n>")
 inoremap <expr> <c-k> ("\<C-p>")
+
+nnoremap <C-L> :bnext<CR>
+nnoremap <C-H> :bprev<CR>
+nnoremap <C-S> :w<CR>
+nnoremap <C-Q> :wq<CR>
+nnoremap <C-B> :bw<CR>
+
+" Plug 'vim-python/python-syntax'
+let g:python_highlight_builtins = 1
+let g:python_highlight_string_formatting = 1
+let g:python_highlight_func_calls = 1
+let g:python_highlight_class_vars = 1
+
+" Plug 'sbdchd/neoformat'
+let g:neoformat_basic_format_retab = 1
+let g:neoformat_basic_format_trim = 1
+
+" Plug 'scrooloose/nerdtree'
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | exe 'cd '.argv()[0] | endif
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+let NERDTreeQuitOnOpen = 1
+map <C-n> :NERDTreeToggle<CR>
+nnoremap <silent> <Leader>v :NERDTreeFind<CR>
+let NERDTreeMinimalUI = 1
+let NERDTreeDirArrows = 1
+
+" Plug 'machakann/vim-highlightedyank'
+hi HighlightedyankRegion cterm=reverse gui=reverse
+let g:highlightedyank_highlight_duration = 1000
+let g:airline#extensions#tabline#enabled = 1
+
+" Plug 'vim-airline/vim-airline' / Plug 'vim-airline/vim-airline-themes'
+let g:airline_powerline_fonts = 1
+let g:airline_theme='onedark'
+let g:airline#extensions#tabline#enabled = 1
+
+let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+
+set encoding=UTF-8
+set noexpandtab
+set tabstop=2
+set shiftwidth=2
+set softtabstop=2
+set list
+set scrolloff=4
+set ttimeoutlen=0
+set notimeout
+set viewoptions=cursor,folds,slash,unix
+set wrap
+set tw=0
+set indentexpr=
+set foldmethod=indent
+set foldlevel=99
+set foldenable
+set formatoptions-=tc
+set splitright
+set splitbelow
+set noshowmode
+set showcmd
+set wildmenu
+set ignorecase
+set smartcase
+set shortmess+=c
+set inccommand=split
+set completeopt=longest,noinsert,menuone,noselect,preview
+set ttyfast "should make scrolling faster
+set lazyredraw "same as above
+set visualbell
+silent !mkdir -p ~/.config/nvim/tmp/backup
+silent !mkdir -p ~/.config/nvim/tmp/undo
+"silent !mkdir -p ~/.config/nvim/tmp/sessions
+set backupdir=~/.config/nvim/tmp/backup,.
+set directory=~/.config/nvim/tmp/backup,.
+if has('persistent_undo')
+	set undofile
+	set undodir=~/.config/nvim/tmp/undo,.
+endif
+set colorcolumn=100
+set updatetime=1000
+set virtualedit=block
+
